@@ -1,0 +1,34 @@
+<%- include('partials/header', { title: 'Add New Menu Item' }) %>
+
+<section class="container mt-5">
+    <h2>Add New Menu Item</h2>
+    <form action="/add-menu-item" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Item Name</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" name="category" class="form-control" required>
+                <option value="Appetizer">Appetizer</option>
+                <option value="Main Course">Main Course</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="image">Image</label>
+            <input type="file" id="image" name="image" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Add Item</button>
+    </form>
+</section>
+
+<%- include('partials/footer') %>

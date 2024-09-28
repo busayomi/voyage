@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyage Hotels and Services Wiki</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #007bff;
+        }
+        .list-group-item {
+            font-size: 0.95rem;
+        }
+        .accordion-button {
+            font-size: 1rem;
+        }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+
+<section class="container mt-5">
+    <h1 class="text-center mb-5">Voyage Hotels and Services Wiki</h1>
+
+    <h2>Key Features</h2>
+    <ul class="list-group mb-4">
+        <li class="list-group-item">User Authentication System</li>
+        <li class="list-group-item">Booking System</li>
+        <li class="list-group-item">Suites Management</li>
+        <li class="list-group-item">Dining Management</li>
+        <li class="list-group-item">Events Management</li>
+        <li class="list-group-item">Contact Us Form</li>
+        <li class="list-group-item">Admin Functions</li>
+    </ul>
+
+    <h2>Route Listing and Descriptions</h2>
+    <div class="accordion" id="routeAccordion">
+        <!-- Authentication Routes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAuth">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAuth" aria-expanded="false" aria-controls="collapseAuth">
+                    Authentication Routes
+                </button>
+            </h2>
+            <div id="collapseAuth" class="accordion-collapse collapse" aria-labelledby="headingAuth" data-bs-parent="#routeAccordion">
+                <div class="accordion-body">
+                    <strong>GET `/login`</strong>: Displays the login form for users. <br/>
+                    <strong>POST `/login`</strong>: Handles user login. Validates credentials. <br/>
+                    <strong>GET `/register`</strong>: Displays the registration form. <br/>
+                    <strong>POST `/register`</strong>: Handles user registration, hashes password, saves user. <br/>
+                    <strong>GET `/logout`</strong>: Logs out the user and ends their session. <br/>
+                    <strong>GET `/profile`</strong>: Displays the user’s profile and bookings (logged-in users only). <br/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suites Routes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSuites">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSuites" aria-expanded="false" aria-controls="collapseSuites">
+                    Suites Routes
+                </button>
+            </h2>
+            <div id="collapseSuites" class="accordion-collapse collapse" aria-labelledby="headingSuites" data-bs-parent="#routeAccordion">
+                <div class="accordion-body">
+                    <strong>GET `/suites`</strong>: Displays the list of suites. Includes a search bar. <br/>
+                    <strong>GET `/suites/:id`</strong>: Displays detailed info about a suite. <br/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Routes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingBooking">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBooking" aria-expanded="false" aria-controls="collapseBooking">
+                    Booking Routes
+                </button>
+            </h2>
+            <div id="collapseBooking" class="accordion-collapse collapse" aria-labelledby="headingBooking" data-bs-parent="#routeAccordion">
+                <div class="accordion-body">
+                    <strong>GET `/booking/:id`</strong>: Displays booking form for a specific suite. Prefills logged-in user's details. <br/>
+                    <strong>POST `/submit-booking`</strong>: Submits booking info and saves it in the DB. <br/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dining Routes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingDining">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDining" aria-expanded="false" aria-controls="collapseDining">
+                    Dining Routes
+                </button>
+            </h2>
+            <div id="collapseDining" class="accordion-collapse collapse" aria-labelledby="headingDining" data-bs-parent="#routeAccordion">
+                <div class="accordion-body">
+                    <strong>GET `/dining`</strong>: Displays menu items in categories like Appetizers, Main Courses, and Desserts. <br/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Routes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEvents">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEvents" aria-expanded="false" aria-controls="collapseEvents">
+                    Events Routes
+                </button>
+            </h2>
+            <div id="collapseEvents" class="accordion-collapse collapse" aria-labelledby="headingEvents" data-bs-parent="#routeAccordion">
+                <div class="accordion-body">
+                    <strong>GET `/events`</strong>: Lists upcoming and past events. <br/>
+                    <strong>POST `/add-event`</strong>: Allows admin to add events with image upload. <br/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Routes -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAdmin">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAdmin" aria-expanded="false" aria-controls="collapseAdmin">
+                    Admin Routes
+                </button>
+            </h2>
+            <div id="collapseAdmin" class="accordion-collapse collapse" aria-labelledby="headingAdmin" data-bs-parent="#routeAccordion">
+                <div class="accordion-body">
+                    <strong>GET `/bookings-and-requests`</strong>: Shows all bookings and contact requests (admin view). <br/>
+                    <strong>GET `/view-bookings-requests`</strong>: Displays bookings and requests in a table format. <br/>
+                    <strong>POST `/add-menu-item`</strong>: Admin can add a menu item with image. <br/>
+                    <strong>POST `/add-suite`</strong>: Admin can add a new suite to the DB with images. <br/>
+                    <strong>GET `/create-event`</strong>: Displays a form to create a new event. <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mt-5">Database Schema Overview</h2>
+    <ul class="list-group mb-4">
+        <li class="list-group-item"><strong>Users Table:</strong> Stores user data (ID, Name, Email, Password).</li>
+        <li class="list-group-item"><strong>Suites Table:</strong> Stores suite details (Name, Description, Price, Images, etc.).</li>
+        <li class="list-group-item"><strong>Bookings Table:</strong> Stores booking data (User info, Suite ID, Dates, Guests, etc.).</li>
+        <li class="list-group-item"><strong>Menu Items Table:</strong> Stores menu item data (Name, Description, Price, Category, Image).</li>
+        <li class="list-group-item"><strong>Events Table:</strong> Stores event data (Name, Date, Time, Description, Image).</li>
+        <li class="list-group-item"><strong>Contact Requests Table:</strong> Stores contact form submissions.</li>
+    </ul>
+
+    <h2 class="mt-5">Third-Party Packages</h2>
+    <ul class="list-group">
+        <li class="list-group-item">`express-session`: Manages user sessions.</li>
+        <li class="list-group-item">`connect-flash`: Handles success and error flash messages.</li>
+        <li class="list-group-item">`bcryptjs`: Encrypts passwords securely.</li>
+        <li class="list-group-item">`multer`: Manages file uploads for menu items, suites, and events.</li>
+    </ul>
+</section>
+
+<footer>
+    <p>Voyage Hotels &copy; 2024 - All rights reserved</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

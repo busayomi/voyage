@@ -1,0 +1,19 @@
+<%- include('partials/header') %>
+
+<section class="container mt-5 text-center">
+    <h1 class="text-success">Booking Confirmed!</h1>
+    <p class="lead">Thank you, <%= fullName %>! Your booking has been successfully completed.</p>
+
+    <div class="alert alert-success mt-4">
+        <h4>Booking Details</h4>
+        <p><strong>Suite:</strong> <%= suite.name %></p>
+        <p><strong>Check-in:</strong> <%= checkIn %></p>
+        <p><strong>Check-out:</strong> <%= checkOut %></p>
+        <p><strong>Guests:</strong> <%= guests %></p>
+        <p><strong>Special Requests:</strong> <%= specialRequests %></p>
+    </div>
+
+    <a href="/" class="btn btn-primary mt-3">Return to Home</a>
+</section>
+
+<%- include('partials/footer') %>

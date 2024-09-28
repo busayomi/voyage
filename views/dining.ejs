@@ -1,0 +1,62 @@
+<%- include('partials/header') %>
+
+<main>
+    <!-- Appetizers Section -->
+    <section id="appetizers" class="container mt-5">
+        <h2 class="mb-4">Appetizers</h2>
+        <div class="row">
+            <% appetizers.forEach(item => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="/images/<%= item.image %>" class="card-img-top" alt="<%= item.name %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= item.name %></h5>
+                            <p class="card-text"><%= item.description %></p>
+                            <p class="card-text"><strong>$<%= item.price %></strong></p>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <!-- Main Courses Section -->
+    <section id="main-courses" class="container mt-5">
+        <h2 class="mb-4">Main Courses</h2>
+        <div class="row">
+            <% mainCourses.forEach(item => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="/images/<%= item.image %>" class="card-img-top" alt="<%= item.name %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= item.name %></h5>
+                            <p class="card-text"><%= item.description %></p>
+                            <p class="card-text"><strong>$<%= item.price %></strong></p>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <!-- Desserts Section -->
+    <section id="desserts" class="container mt-5">
+        <h2 class="mb-4">Desserts</h2>
+        <div class="row">
+            <% desserts.forEach(item => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="/images/<%= item.image %>" class="card-img-top" alt="<%= item.name %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= item.name %></h5>
+                            <p class="card-text"><%= item.description %></p>
+                            <p class="card-text"><strong>$<%= item.price %></strong></p>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>

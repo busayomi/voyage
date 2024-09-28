@@ -1,0 +1,26 @@
+<%- include('partials/header', { title: 'Add New Suite' }) %>
+
+<section class="container mt-5">
+    <h2>Add New Suite</h2>
+    <form action="/add-suite" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">Suite Name</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="price">Price per Night</label>
+            <input type="number" id="price" name="price" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="images">Images</label>
+            <input type="file" id="images" name="images" multiple class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Add Suite</button>
+    </form>
+</section>
+
+<%- include('partials/footer') %>

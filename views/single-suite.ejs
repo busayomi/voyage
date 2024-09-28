@@ -1,0 +1,43 @@
+<%- include('partials/header', { title: suite.name }) %>
+
+<section id="suite-details" class="container mt-5">
+    <div class="row">
+        <!-- Suite Images Carousel -->
+        <div class="col-md-7">
+            <div id="suiteCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <% JSON.parse(suite.images).forEach((image, index) => { %>
+                        <div class="carousel-item <%= index === 0 ? 'active' : '' %>">
+                            <img src="/<%= image %>" class="d-block w-100" alt="<%= suite.name %> Image <%= index + 1 %>">
+                        </div>
+                    <% }) %>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#suiteCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#suiteCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Suite Information -->
+        <div class="col-md-5">
+            <h1><%= suite.name %></h1>
+            <p><%= suite.description %></p>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-bed me-2"></i> <strong>Bed:</strong> <%= suite.bed %></li>
+                <li><i class="fas fa-door-open me-2"></i> <strong>Rooms:</strong> <%= suite.rooms %> rooms</li>
+                <li><i class="fas fa-bath me-2"></i> <strong>Bathroom:</strong> <%= suite.bathroom %></li>
+                <li><i class="fas fa-wifi me-2"></i> <strong>Wi-Fi:</strong> <%= suite.wifi %></li>
+                <li><i class="fas fa-utensils me-2"></i> <strong>Dining:</strong> <%= suite.dining %></li>
+            </ul>
+            <!-- Book Now Button -->
+            <a href="/booking/<%= suite.id %>" class="btn btn-primary mt-3">Book Now</a>
+        </div>
+    </div>
+</section>
+
+
+<%- include('partials/footer') %>

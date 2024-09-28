@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+
+<main>
+    <section id="upcoming-events" class="container mt-5">
+        <h2 class="mb-4">Upcoming Events</h2>
+        <div class="row">
+            <% if (upcomingEvents && upcomingEvents.length > 0) { %>
+                <% upcomingEvents.forEach(event => { %>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="<%= event.image %>" class="card-img-top" alt="<%= event.name %>">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= event.name %></h5>
+                                <p class="card-text"><%= event.description %></p>
+                                <p class="card-text"><strong>Date:</strong> <%= event.date %></p>
+                                <p class="card-text"><strong>Time:</strong> <%= event.time %></p>
+                                <a href="/contact" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No upcoming events at the moment.</p>
+            <% } %>
+        </div>
+    </section>
+
+    <section id="past-events" class="container mt-5">
+        <h2 class="mb-4">Past Events</h2>
+        <div class="row">
+            <% if (pastEvents && pastEvents.length > 0) { %>
+                <% pastEvents.forEach(event => { %>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="<%= event.image %>" class="card-img-top" alt="<%= event.name %>">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= event.name %></h5>
+                                <p class="card-text"><%= event.description %></p>
+                                <p class="card-text"><strong>Date:</strong> <%= event.date %></p>
+                                <p class="card-text"><strong>Time:</strong> <%= event.time %></p>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No past events available.</p>
+            <% } %>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>

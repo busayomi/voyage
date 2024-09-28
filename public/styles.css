@@ -1,0 +1,422 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    text-align: justify;
+}
+.body-text {
+    font-size: 2em;
+}
+header {
+    background-color: white;
+    padding-bottom: 0.5em;
+}
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.banner {
+    /* background-color: lightblue; */
+    background-image: url(images/sky-header.jpg);
+    padding: 2em;
+}
+
+.navbar {
+    background-color: white;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.logo-container {
+    padding: 1em 0;
+    background-color: white;
+    /* background-color: darkblue; */
+    text-align: center;
+}
+.logo-container img {
+    width: 70px;
+    height: 80px;
+}
+
+.navbar {
+    background-color: darkblue;
+    padding: 0.5em 0;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 1.5em;
+}
+
+.navbar-nav .nav-item {
+    flex: 1;
+    text-align: center;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.cards {
+    margin: 1em;
+}
+
+.card {
+    /* background-color: lightskyblue; */
+    /* border: 2px solid white; */
+}
+
+body {
+    /* margin-left: 40px; */
+    text-align: justify;
+}
+
+#heroCarousel {
+    max-height: 600px;
+    overflow: hidden;
+}
+
+#heroCarousel .carousel-inner img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+.carousel-caption h1 {
+    font-size: 4em;
+    text-shadow: 3px 3px 0 darkblue;
+    /* text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; */
+}
+.carousel-caption p {
+    font-size: 1.5em;
+    color: white;
+    font-weight: 500;
+
+    /* text-shadow: 2px 2px;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; */
+}
+
+.carousel-indicators {
+    list-style-type: none;
+}
+
+.carousel-caption {
+    font-size: 1rem;
+    padding: 2.5em;
+    /* padding-bottom: 5em; */
+    background-color: #03104c2d;
+    border-radius: 10px;
+    margin-bottom: 10em;
+
+}
+
+@media (max-width: 576px) {
+    .carousel-caption h1 {
+        font-size: 1.25rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bd-violet-bg); 
+    --bs-tooltip-color: var(--bs-white);
+}
+
+#intro {
+    max-width: 80%;
+    /* padding-top: 3em;
+    padding-bottom: 1.5em; */
+    padding: 3em;
+    margin: 3em auto;
+    text-align: center;
+    p {
+        font-size: 1.5em;
+    }
+}
+@media (max-width: 576px) {
+    .intro {
+        max-width: 90%;
+        margin: auto;
+        padding: 0;
+    }
+}
+
+.card-title {
+        font-size: 2em;
+}
+.card-text {
+    font-size: 1.5em;
+}
+
+.card {
+    /* position: relative;
+    border: none;
+    overflow: hidden; */
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    border: none;
+}
+
+.card-body {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    /* transition: background-color 0.3s ease; */
+    /* padding: 1em;
+    text-align: center; */ 
+    background: rgba(8, 8, 119, 0.772);
+    color: white;
+    text-align: center;
+}
+/* 
+.card:hover .card-body {
+    opacity: 1;
+} */
+
+/* .card-body:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 1;
+} */
+@media (max-width: 576px) {
+    .carousel-caption h1 {
+        font-size: 2em;
+    }
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.card-img-top {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+}
+
+@media (max-width: 576px) {
+    .card-title {
+        font-size: 1.5rem;
+    }
+    
+    .card-text {
+        font-size: 1rem;
+    }
+}
+
+.suite-details {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 3em;
+}
+
+.suite-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;   
+}
+.suite-images {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 8px; 
+}
+
+
+.suite-images img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.suite-info {
+    flex: 1;
+    padding-left: 4em;
+    padding-right: 4em;
+}
+
+.suite-info h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.suite-info p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.suite-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.suite-info ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.suite-info ul li:before {
+    color: #2980b9;
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    top: 0;
+    list-style-type: none;
+    padding-left: 0; /* To remove default indentation */
+}
+
+.book-now {
+    background-color: darkblue;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-now:hover {
+    background-color: #3498db;
+}
+
+footer {
+    background-color: darkblue;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 5em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer ul li {
+    margin: 0;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.booking-form {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.booking-form h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: darkblue;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #3498db;
+}
+
+.about-us {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-us h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-us h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-right: 15px;
+}
+#communication{
+    max-width: 60%;
+    margin-top: 5em;
+}
+#communication h1{
+    font-size: 2em;
+}
+
+#communication p{
+    font-size: 1.5em;
+}

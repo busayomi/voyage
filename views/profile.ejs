@@ -1,0 +1,56 @@
+<%- include('partials/header', { title: "Profile" }) %>
+
+<section class="container mt-5">
+    <div class="row">
+        <!-- User Details Section -->
+        <div class="col-md-4">
+            <h3>Your Profile</h3>
+            <div class="card p-3 mb-3">
+                <h5 class="card-title">User Details</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Name:</strong> <%= user.name %></li>
+                    <li class="list-group-item"><strong>Email:</strong> <%= user.email %></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bookings Table Section -->
+        <div class="col-md-8">
+            <h3>Your Bookings</h3>
+            <% if (bookings.length > 0) { %>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Suite</th>
+                            <th>Check-In Date</th>
+                            <th>Check-Out Date</th>
+                            <th>Guests</th>
+                            <th>Special Requests</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% bookings.forEach(booking => { %>
+                            <tr>
+                                <td><%= booking.suite_name %></td>
+                                <td><%= booking.full_name %></td>
+                                <td><%= booking.email %></td>
+                                <td><%= booking.phone %></td>
+                                <td><%= booking.check_in %></td>
+                                <td><%= booking.check_out %></td>
+                                <td><%= booking.guests %></td>
+                                <td><%= booking.special_requests || 'None' %></td>
+                                <td>$<%= booking.price_per_night.toFixed(2) %></td> <!-- Ensure price_per_night is used here -->
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+            <% } else { %>
+                <p>No bookings made yet.</p>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,92 @@
+<%- include('partials/header', { title: 'View Bookings and Requests' }) %>
+
+<section class="container mt-5">
+    <h1>Bookings, Contact Requests, and Users</h1>
+
+    <!-- Bookings Table -->
+    <h2 class="mt-4">Bookings</h2>
+    <% if (bookings.length > 0) { %>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Suite Name</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Check-In</th>
+                    <th>Check-Out</th>
+                    <th>Guests</th>
+                    <th>Special Requests</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% bookings.forEach(booking => { %>
+                    <tr>
+                        <td><%= booking.suite_name %></td>
+                        <td><%= booking.full_name %></td>
+                        <td><%= booking.email %></td>
+                        <td><%= booking.phone %></td>
+                        <td><%= booking.check_in %></td>
+                        <td><%= booking.check_out %></td>
+                        <td><%= booking.guests %></td>
+                        <td><%= booking.special_requests || 'None' %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No bookings found.</p>
+    <% } %>
+
+    <!-- Contact Requests Table -->
+    <h2 class="mt-4">Contact Requests</h2>
+    <% if (requests.length > 0) { %>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% requests.forEach(request => { %>
+                    <tr>
+                        <td><%= request.full_name %></td>
+                        <td><%= request.email %></td>
+                        <td><%= request.message %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No contact requests found.</p>
+    <% } %>
+
+    <!-- Users Table -->
+    <h2 class="mt-4">Registered Users</h2>
+    <% if (users.length > 0) { %>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.id %></td>
+                        <td><%= user.name %></td>
+                        <td><%= user.email %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No users found.</p>
+    <% } %>
+</section>
+
+<%- include('partials/footer') %>
